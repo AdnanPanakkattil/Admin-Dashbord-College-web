@@ -68,7 +68,7 @@ function App() {
             </Menu.Item>
             <Menu.Item icon={<MedicineBoxOutlined />} key="4">
               <NavLink
-                to="/university-courses"
+                to="/UniversityCourses"
                 className={({ isActive }) =>
                   isActive ? "font-semibold text-black" : "text-black"
                 }

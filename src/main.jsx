@@ -5,7 +5,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App.jsx'
 import Dashbord from './pages/DashbordPage.jsx'
-import Contact from './pages/Contact.jsx'
+import Contact from './pages/ContactPage.jsx'
+import Courses from './components/Courses/Courses.jsx'
+import University from './components/University/University.jsx'
+import UniversityCourses from './components/UniversityCourses/UniversityCourses.jsx'
+import College from './components/College/College.jsx'
 
 
 const router = createBrowserRouter([
@@ -19,19 +23,20 @@ const router = createBrowserRouter([
       },
       {
         path:'/courses',
-        element:<Contact/>
+        element:<Courses/>
       },
       {
         path:'/University',
-        element:<Contact/>
+        element:<University/>
       },
       {
         path:'/UniversityCourses',
-        element:<Contact/>
+        element:<UniversityCourses/>
+
       },
       {
         path:'/College',
-        element:<Contact/>
+        element:<College/>
       },
       {
         path:'/Contact',

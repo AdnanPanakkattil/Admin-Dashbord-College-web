@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -12,6 +12,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.77.2",
     "antd": "^5.25.3",
+    "axios": "^1.9.0",
     "install": "^0.13.0",
     "npm": "^11.4.1",
     "react": "^19.1.0",
