@@ -1,6 +1,19 @@
 import { useMutation } from "react-query"
-import { creategetCollegeData } from "./CollegeApi"
+import { getCollegeData, createCollegeData, updateCollegeData, deleteCollegeData } from "./CollegeApi";
 
-export const useCreateCollege = () =>{
-    return useMutation((data)=>creategetCollegeData(data))
-}
+export const useGetCollege = () => {
+    return useQuery('getCollege', getCollegeData);
+};
+
+export const useCreateCollege= () => {
+    return useMutation(createCollegeData);
+};
+
+
+export const useUpdateCollege= () => {
+    return useMutation(({ id, data }) => updateCollegeData(id, data));
+};
+
+export const useDeleteCollege= () => {
+    return useMutation(deleteCollegeData);
+};
