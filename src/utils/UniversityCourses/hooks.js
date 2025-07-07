@@ -1,5 +1,7 @@
+
 import { useMutation } from "react-query"
-import { getUniversityCoursesData, updateUniversityCoursesData, deleteUniversityCoursesData, CreateUniversityCoursesData } from "./UniversityCoursesApi";
+import { CreateUniversityCoursesData, deleteUniversityCoursesData, getUniversityCoursesData, updateUniversityCoursesData } from "./UniversityCoursesApi";
+
 
 export const useGetUniversityCourses = () => {
     return useQuery('getUniversityCourses', getUniversityCoursesData);

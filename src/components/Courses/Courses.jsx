@@ -125,14 +125,7 @@ function Courses() {
     return (
         <>
             <div style={{ marginBottom: 16 }}>
-                <Button 
-                    type="primary" 
-                    onClick={handleAdd}
-                    style={{
-                        backgroundColor: '#52c41a', 
-                        borderColor: '#52c41a'
-                    }}
-                >
+                <Button  type="primary"  onClick={handleAdd} style={{ backgroundColor: '#52c41a',   borderColor: '#52c41a'}}>
                     Add Courses
                 </Button>
             </div>
@@ -140,33 +133,14 @@ function Courses() {
             <Table columns={columns} dataSource={data?.data} loading={isLoading} rowKey="id" />
 
             {/* Add Modal */}
-            <Modal
-                title="Add courses"
-                visible={addModalVisible}
-                onCancel={() => setAddModalVisible(false)}
-                footer={null}
-                destroyOnClose
-            >
+            <Modal title="Add courses" visible={addModalVisible} onCancel={() => setAddModalVisible(false)} footer={null} destroyOnClose >
                 <Form form={form} layout="vertical" onFinish={onFinish}>
-                    <Form.Item
-                        name="courses_name"
-                        label="courses name"
-                        rules={[{ required: true, message: 'Please input courses name!' }]}
-                    >
+                    <Form.Item name="courses_name" label="courses name" rules={[{ required: true, message: 'Please input courses name!' }]}>
                         <Input placeholder="Enter courses name" />
                     </Form.Item>
                    
                     <Form.Item>
-                        <Button 
-                            type="primary" 
-                            htmlType="submit" 
-                            loading={creating} 
-                            block
-                            style={{
-                                backgroundColor: '#52c41a', 
-                                borderColor: '#52c41a'
-                            }}
-                        >
+                        <Button  type="primary"  htmlType="submit"   loading={creating}   block style={{ backgroundColor: '#52c41a',  borderColor: '#52c41a' }} >
                             Submit
                         </Button>
                     </Form.Item>
@@ -174,30 +148,15 @@ function Courses() {
             </Modal>
 
             {/* Edit Modal */}
-            <Modal
-                title="Edit courses name"
-                visible={editModalVisible}
-                onCancel={() => setEditModalVisible(false)}
-                footer={null}
-                destroyOnClose
-            >
+            <Modal title="Edit courses name" visible={editModalVisible}  onCancel={() => setEditModalVisible(false)} footer={null} destroyOnClose >
                 <Form form={form} layout="vertical" onFinish={onFinish}>
-                    <Form.Item
-                        name="courses_name"
-                        label="courses name"
-                        rules={[{ required: true, message: 'Please input courses name!' }]}
-                    >
+
+                    <Form.Item name="courses_name" label="courses name" rules={[{ required: true, message: 'Please input courses name!' }]}>
                         <Input placeholder="Enter courses name" />
                     </Form.Item>
                
-
-               
                     <Form.Item>
-                        <Button 
-                            type="primary" 
-                            htmlType="submit" 
-                            loading={updating} 
-                            block
+                        <Button type="primary" htmlType="submit" loading={updating}  block
                             style={{
                                 backgroundColor: '#1890ff', 
                                 borderColor: '#1890ff'
