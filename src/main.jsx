@@ -10,12 +10,19 @@ import Courses from './components/Courses/Courses.jsx'
 import University from './components/University/University.jsx'
 import UniversityCourses from './components/UniversityCourses/UniversityCourses.jsx'
 import College from './components/College/College.jsx'
+import LoginPage from './components/loging/LoginPage.jsx'
+import { RouteProtect } from './components/Cookies/Provider.jsx'
+
 
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<App/>,
+    element: (
+      <RouteProtect>
+        <App />
+      </RouteProtect>
+    ),
     children:[
       {
         path:'/',
@@ -41,10 +48,15 @@ const router = createBrowserRouter([
       {
         path:'/Contact',
         element:<Contact/>
-      }
+      },
     ]
-  }
+  },
+  {
+    path:'/login',
+    element:<LoginPage/>
+  },
 ])
+
 const client = new QueryClient() 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -52,4 +64,5 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router}/>
     </QueryClientProvider>
   </StrictMode>,
+  
 )

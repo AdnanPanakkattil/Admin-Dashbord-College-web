@@ -11,10 +11,12 @@ import {
   PhoneOutlined,
   MedicineBoxOutlined,
   AppstoreAddOutlined,
+  UserOutlined, 
 } from "@ant-design/icons";
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
+  const userName = "login"; 
 
   return (
     <div className="w-full h-screen">
@@ -103,11 +105,14 @@ function App() {
           <Header
             className="bg-white"
             style={{
-              padding: 0,
+              padding: "0 16px",
               position: "fixed",
               top: 0,
               width: `calc(100% - ${collapsed ? 80 : 220}px)`,
               zIndex: 10,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
             <Button
@@ -116,6 +121,17 @@ function App() {
               onClick={() => setCollapsed(!collapsed)}
               style={{ fontSize: "16px", width: 64, height: 64 }}
             />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <UserOutlined style={{ fontSize: "20px", marginRight: "8px" }} />
+               <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive ? "font-semibold text-black" : "text-black"
+                }
+              >
+                login
+              </NavLink>
+            </div>
           </Header>
           <Content
             className="overflow-y-auto"
